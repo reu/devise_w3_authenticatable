@@ -1,0 +1,16 @@
+*~
+*.cache
+*.sql
+.DS_Store
+config/database.yml
+tmp/*
+log/*
+doc/*
+.*
+!.gitignore
+!.gitmodules
+vendor/rails
+nbproject/*
+public/stylesheets/*.css
+public/system/*
+db/*.sqlite3
