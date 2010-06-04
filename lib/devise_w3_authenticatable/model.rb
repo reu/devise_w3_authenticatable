@@ -2,14 +2,7 @@ require 'devise_ldap_authenticatable/strategy'
 
 module Devise
   module Models
-    # LDAP Module, responsible for validating the user credentials via LDAP.
-    #
-    # Examples:
-    #
-    #    User.authenticate('email@test.com', 'password123')  # returns authenticated user or nil
-    #    User.find(1).valid_password?('password123')         # returns true/false
-    #
-    module LdapAuthenticatable
+    module W3Authenticatable
       def self.included(base)
         base.class_eval do
           extend ClassMethods

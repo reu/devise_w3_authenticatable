@@ -4,7 +4,7 @@ module Devise
   module Strategies
     # Strategy for signing in a user based on his login and password using LDAP.
     # Redirects to sign_in page if it's not authenticated
-    class LdapAuthenticatable < Base
+    class W3Authenticatable < Base
       def valid?
         valid_controller? && valid_params? && mapping.to.respond_to?(:authenticate_with_w3)
       end
