@@ -11,12 +11,10 @@ module Devise
         end
       end
 
-      # Set password to nil
       def clean_up_passwords
         self.password = nil
       end
 
-      # Checks if a resource is valid upon authentication.
       def valid_w3_authentication?(password)
         Devise::W3Adapter.valid_credentials?(self.login, password)
       end
@@ -42,7 +40,7 @@ module Devise
         # namedscope to filter records while authenticating.
         # Example:
         #
-        #   def self.find_for_imap_authentication(conditions={})
+        #   def self.find_for_w3_authentication(conditions={})
         #     conditions[:active] = true
         #     find(:first, :conditions => conditions)
         #   end
