@@ -1,4 +1,4 @@
-require 'devise_ldap_authenticatable/strategy'
+require 'devise_w3_authenticatable/strategy'
 
 module Devise
   module Models
