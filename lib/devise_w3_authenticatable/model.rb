@@ -21,6 +21,7 @@ module Devise
 
             # Saves the resource to the database if we said so
             resource.save if Devise.w3_create_user
+            resource
           end
         end
 
