@@ -17,11 +17,6 @@ module Devise
       end
 
       module ClassMethods
-        protected
-
-        # Find first record based on conditions given (ie by the sign in form).
-        # Overwrite to add customized conditions, create a join, or maybe use a
-        # namedscope to filter records while authenticating.
         def find_for_w3_authentication(conditions={})
           find_or_initialize_by_logon(conditions[:logon])
         end
