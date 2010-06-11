@@ -3,15 +3,14 @@ require 'devise/strategies/authenticatable'
 module Devise
   module Strategies
     class W3Authenticatable < Authenticatable
-      def valid?
-        super && mapping.to.respond_to?(:authenticate_with_w3)
-      end
-
       def authenticate!
-        if resource = mapping.to.authenticate_with_w3(params[scope])
-          success!(resource)
+        resource = valid_password? && mapping.to.find_for_w3_authentication(authentication_hash)
+
+        if validate resource { resource.valid_w3_password? password }
+          resource.after_w3_authentication
+          success! resource
         else
-          fail(:invalid)
+          fail :invalid
         end
       end
     end
