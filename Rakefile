@@ -12,3 +12,20 @@ Rake::TestTask.new(:test) do |t|
   t.pattern = 'test/**/*_test.rb'
   t.verbose = true
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "devise_w3_authenticatable"
+    gemspec.summary = "Devise IBM w3 authentication strategy"
+    gemspec.description = "Devise strategy to authenticate against IBM w3 LDAP directory."
+    gemspec.email = "reu@rnavarro.com.br"
+    gemspec.homepage = "http://github.com/reu/devise_w3_authenticatable"
+    gemspec.authors = ["Rodrigo Navarro"]
+    gemspec.add_dependency "devise",      ">= 1.1.rc1"
+    gemspec.add_dependency "hpricot",     ">= 0.8.0"
+    gemspec.add_dependency "net-ldap",    ">= 0.1.1"
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
+end
