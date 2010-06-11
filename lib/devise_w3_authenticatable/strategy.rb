@@ -4,7 +4,7 @@ module Devise
   module Strategies
     class W3Authenticatable < Authenticatable
       def authenticate!
-        resource = valid_password? && mapping.to.find_for_w3_authentication(authentication_hash)
+        resource = mapping.to.find_for_w3_authentication(authentication_hash)
 
         if validate resource { resource.valid_w3_password? password }
           resource.after_w3_authentication
