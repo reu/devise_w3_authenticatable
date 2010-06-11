@@ -1,15 +1,12 @@
-require 'devise/strategies/base'
+require 'devise/strategies/authenticatable'
 
 module Devise
   module Strategies
-    class W3Authenticatable < Base
+    class W3Authenticatable < Authenticatable
       def valid?
-        valid_controller? && valid_params? && mapping.to.respond_to?(:authenticate_with_w3)
+        super && mapping.to.respond_to?(:authenticate_with_w3)
       end
 
-      # Authenticate a user based on login and password params, returning to warden
-      # success and the authenticated user if everything is okay. Otherwise redirect
-      # to sign in page.
       def authenticate!
         if resource = mapping.to.authenticate_with_w3(params[scope])
           success!(resource)
@@ -17,16 +14,6 @@ module Devise
           fail(:invalid)
         end
       end
-
-      protected
-
-        def valid_controller?
-          params[:controller] == 'sessions'
-        end
-
-        def valid_params?
-          params[scope] && params[scope][:password].present?
-        end
     end
   end
 end
