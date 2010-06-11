@@ -18,7 +18,7 @@ module Devise
 
       module ClassMethods
         def find_for_w3_authentication(conditions={})
-          find_or_initialize_by_logon(conditions[:logon])
+          find_or_initialize_by_logon(conditions[:email])
         end
       end
     end
