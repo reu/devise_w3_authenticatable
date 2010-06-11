@@ -9,6 +9,9 @@ module Devise
         attr_accessor :password
       end
 
+      def after_w3_authentication
+      end
+
       module ClassMethods
         # Authenticate a user based on configured attribute keys. Returns the
         # authenticated user if it's valid or nil.
