@@ -26,6 +26,7 @@ begin
     gemspec.add_dependency "hpricot",     ">= 0.8.0"
     gemspec.add_dependency "net-ldap",    ">= 0.1.1"
   end
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
 end
