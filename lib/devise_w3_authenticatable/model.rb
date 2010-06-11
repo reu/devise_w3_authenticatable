@@ -3,11 +3,10 @@ require 'devise_w3_authenticatable/strategy'
 module Devise
   module Models
     module W3Authenticatable
-      def self.included(base)
-        base.class_eval do
-          extend ClassMethods
-          attr_accessor :password
-        end
+      extend ActiveSupport::Concern
+
+      included do
+        attr_accessor :password
       end
 
       module ClassMethods
