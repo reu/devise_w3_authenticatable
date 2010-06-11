@@ -14,3 +14,4 @@ nbproject/*
 public/stylesheets/*.css
 public/system/*
 db/*.sqlite3
+pkg/*

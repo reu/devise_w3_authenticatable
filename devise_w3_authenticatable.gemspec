@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
     ".gitignore",
      "Rakefile",
      "VERSION",
+     "devise_w3_authenticatable.gemspec",
      "lib/devise_w3_authenticatable.rb",
      "lib/devise_w3_authenticatable/model.rb",
      "lib/devise_w3_authenticatable/routes.rb",
