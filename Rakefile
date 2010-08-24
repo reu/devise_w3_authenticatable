@@ -22,8 +22,8 @@ begin
     gemspec.email = "reu@rnavarro.com.br"
     gemspec.homepage = "http://github.com/reu/devise_w3_authenticatable"
     gemspec.authors = ["Rodrigo Navarro"]
-    gemspec.add_dependency "devise",      ">= 1.1.rc1"
-    gemspec.add_dependency "hpricot",     ">= 0.8.0"
+    gemspec.add_dependency "devise",      "~> 1.1"
+    gemspec.add_dependency "nokogiri",    "~> 1.4.3.1"
     gemspec.add_dependency "net-ldap",    ">= 0.1.1"
   end
   Jeweler::GemcutterTasks.new

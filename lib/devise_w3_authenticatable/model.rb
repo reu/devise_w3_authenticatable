@@ -9,16 +9,16 @@ module Devise
         attr_accessor :password
       end
 
-      def valid_w3_password?(password)
-        Devise::W3Adapter.valid_credentials? logon, password
+      def authenticate_with_w3!(password)
+        Devise::W3Adapter.valid_credentials? email, password
       end
 
-      def after_w3_authentication
+      def after_w3_authentication(employee = nil)
       end
 
       module ClassMethods
         def find_for_w3_authentication(conditions={})
-          find_or_initialize_by_logon(conditions[:email])
+          find_or_initialize_by_email(conditions[:email])
         end
       end
     end

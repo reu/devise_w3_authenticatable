@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rodrigo Navarro"]
-  s.date = %q{2010-06-11}
+  s.date = %q{2010-08-24}
   s.description = %q{Devise strategy to authenticate against IBM w3 LDAP directory.}
   s.email = %q{reu@rnavarro.com.br}
   s.files = [
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
      "devise_w3_authenticatable.gemspec",
      "lib/devise_w3_authenticatable.rb",
      "lib/devise_w3_authenticatable/model.rb",
-     "lib/devise_w3_authenticatable/routes.rb",
      "lib/devise_w3_authenticatable/schema.rb",
      "lib/devise_w3_authenticatable/strategy.rb",
      "lib/devise_w3_authenticatable/w3_adapter.rb",
@@ -30,7 +29,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/reu/devise_w3_authenticatable}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Devise IBM w3 authentication strategy}
   s.test_files = [
     "test/devise_w3_authenticatable_test.rb",
@@ -41,18 +40,18 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<devise>, [">= 1.1.rc1"])
-      s.add_runtime_dependency(%q<hpricot>, [">= 0.8.0"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<devise>, ["~> 1.1"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
       s.add_runtime_dependency(%q<net-ldap>, [">= 0.1.1"])
     else
-      s.add_dependency(%q<devise>, [">= 1.1.rc1"])
-      s.add_dependency(%q<hpricot>, [">= 0.8.0"])
+      s.add_dependency(%q<devise>, ["~> 1.1"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
       s.add_dependency(%q<net-ldap>, [">= 0.1.1"])
     end
   else
-    s.add_dependency(%q<devise>, [">= 1.1.rc1"])
-    s.add_dependency(%q<hpricot>, [">= 0.8.0"])
+    s.add_dependency(%q<devise>, ["~> 1.1"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.4.3.1"])
     s.add_dependency(%q<net-ldap>, [">= 0.1.1"])
   end
 end
