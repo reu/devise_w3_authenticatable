@@ -10,3 +10,6 @@ Devise.add_module(:w3_authenticatable,
                   :controller => :sessions,
                   :route => :session,
                   :model  => 'devise_w3_authenticatable/model')
+
+module DeviseW3Authenticatable
+end
