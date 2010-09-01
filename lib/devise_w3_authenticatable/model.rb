@@ -18,7 +18,11 @@ module Devise
 
       module ClassMethods
         def find_for_w3_authentication(conditions={})
-          find_or_initialize_by_email(conditions[:email])
+          if DeviseW3Authenticatable.auto_create_user
+            find_or_initialize_by_email(conditions[:email])
+          else
+            find_by_email(conditions[:email])
+          end
         end
       end
     end
