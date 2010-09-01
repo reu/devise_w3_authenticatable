@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{devise_w3_authenticatable}
-  s.version = "0.2.2"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Rodrigo Navarro"]
-  s.date = %q{2010-08-30}
+  s.date = %q{2010-09-01}
   s.description = %q{Devise strategy to authenticate against IBM w3 LDAP directory.}
   s.email = %q{reu@rnavarro.com.br}
   s.files = [
