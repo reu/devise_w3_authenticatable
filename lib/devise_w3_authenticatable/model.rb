@@ -13,7 +13,7 @@ module Devise
         Devise::W3Adapter.valid_credentials? email, password
       end
 
-      def after_w3_authentication(employee = nil)
+      def after_w3_authentication(bluepages_information = nil)
       end
 
       module ClassMethods
